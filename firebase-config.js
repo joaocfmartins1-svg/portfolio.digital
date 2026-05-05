@@ -30,12 +30,12 @@ import { getStorage } from
 // (Consola Firebase → Definições do projeto → As tuas apps → Web).
 // ----------------------------------------------------------------------------
 export const firebaseConfig = {
-  apiKey:            "REPLACE_API_KEY",
-  authDomain:        "https://portfolio-b9038-default-rtdb.europe-west1.firebasedatabase.app/",
-  projectId:         "REPLACE_PROJECT_ID",
+  apiKey:            "AIzaSyCR_fw-D_08LWRmDoXNobY59-9Vct2JSC0",
+  authDomain:        "portfolio-b9038.firebaseapp.com",
+  projectId:         "portfolio-b9038",
   storageBucket:     "REPLACE_PROJECT.appspot.com",
-  messagingSenderId: "REPLACE_SENDER_ID",
-  appId:             "REPLACE_APP_ID"
+  messagingSenderId: "809522293764",
+  appId:             "1:809522293764:web:102472cf5e7a152ed5d951"
 };
 
 // ----------------------------------------------------------------------------

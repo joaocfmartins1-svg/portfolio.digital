@@ -1,0 +1,229 @@
+/* =========================================================================
+   print.css — folha de estilo de impressão para o portfólio
+   -------------------------------------------------------------------------
+   Estratégia:
+   - Esconder navegação, modais, sidebar, filtros, hero gigante
+   - Mostrar apenas: cabeçalho impresso (nome + curso + ano) + portfólio completo
+   - Tipografia menor, sem cores de fundo, sem sombras
+   - Evitar quebrar cards a meio
+   ========================================================================= */
+
+@media print {
+
+  /* ---------- Página ---------- */
+  @page {
+    size: A4;
+    margin: 1.8cm 1.5cm 1.8cm 1.5cm;
+  }
+
+  /* ---------- Reset agressivo ---------- */
+  *, *::before, *::after {
+    background: transparent !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
+
+  body {
+    background: white !important;
+    color: black !important;
+    font-family: "Fraunces", Georgia, serif !important;
+    font-size: 10pt !important;
+    line-height: 1.45 !important;
+    -webkit-print-color-adjust: economy;
+    print-color-adjust: economy;
+  }
+
+  /* Reduzir tamanho dos numerais decorativos (até desaparecem) */
+  .semestre__numeral { display: none !important; }
+
+  /* ---------- Esconder TUDO o que não vai imprimir ---------- */
+  .acesso-aluno,
+  .vista-privada,
+  .modal-registo,
+  .modal-login,
+  .modal-form,
+  .modal-confirma,
+  .toast,
+  .hero,
+  .inicio,
+  .evolucao,
+  .quem-sou,
+  .filtros,
+  .hero__scroll,
+  .botao-portfolio,
+  .portfolio-completo__cabecalho,
+  .estado-vazio,
+  .rodape {
+    display: none !important;
+  }
+
+  /* ---------- Mostrar elementos de impressão ---------- */
+  .vista-publica,
+  .portfolio-completo,
+  .timeline,
+  .timeline__item,
+  .timeline__card {
+    display: block !important;
+  }
+
+  /* ---------- Cabeçalho de impressão (gerado por CSS) ---------- */
+  /*
+   * O cabeçalho é injetado por JS antes da impressão (function imprimir()
+   * em ui-publica.js) num <header class="cabecalho-impressao">.
+   * O fallback se não for injetado: usar @page com margem e mostrar título.
+   */
+  .cabecalho-impressao {
+    display: block !important;
+    margin: 0 0 0.8cm 0;
+    padding: 0 0 0.5cm 0;
+    border-bottom: 0.5pt solid #333;
+    page-break-after: avoid;
+  }
+  .cabecalho-impressao__etiqueta {
+    display: block;
+    font-family: "Inter Tight", system-ui, sans-serif;
+    font-size: 7pt;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #555;
+    margin-bottom: 0.15cm;
+  }
+  .cabecalho-impressao__titulo {
+    font-family: "Fraunces", Georgia, serif;
+    font-size: 18pt;
+    font-weight: 400;
+    line-height: 1.1;
+    color: black;
+    margin: 0;
+  }
+  .cabecalho-impressao__autor {
+    font-family: "Fraunces", Georgia, serif;
+    font-style: italic;
+    font-size: 11pt;
+    color: #333;
+    margin-top: 0.2cm;
+  }
+  .cabecalho-impressao__meta {
+    font-family: "Inter Tight", system-ui, sans-serif;
+    font-size: 8pt;
+    color: #555;
+    margin-top: 0.15cm;
+  }
+
+  /* ---------- Estrutura do portfólio completo ---------- */
+  .portfolio-completo {
+    padding: 0 !important;
+  }
+
+  /* ---------- Timeline ---------- */
+  /* Em impressão: nada de timeline central, apenas lista vertical */
+  .timeline {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  .timeline::before { display: none !important; }
+  .timeline__marca { display: none !important; }
+
+  .timeline__item {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 0 0.4cm 0 !important;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  .timeline__item:nth-child(odd),
+  .timeline__item:nth-child(even) {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 0 0.4cm 0 !important;
+  }
+
+  .timeline__link { color: black !important; text-decoration: none !important; }
+  .timeline__link::after { content: "" !important; } /* não imprimir URLs */
+
+  /* ---------- Cards ---------- */
+  .timeline__card {
+    background: white !important;
+    border: 0.4pt solid #ccc !important;
+    border-radius: 2pt !important;
+    padding: 0.35cm 0.45cm !important;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .timeline__cabecalho {
+    display: flex !important;
+    justify-content: space-between !important;
+    margin-bottom: 0.15cm !important;
+    font-family: "Inter Tight", system-ui, sans-serif !important;
+    font-size: 7pt !important;
+    letter-spacing: 0.08em !important;
+    text-transform: uppercase !important;
+    color: #666 !important;
+  }
+  .timeline__cabecalho time { font-weight: 500 !important; }
+
+  .timeline__card h3 {
+    font-family: "Fraunces", Georgia, serif !important;
+    font-size: 12pt !important;
+    font-weight: 400 !important;
+    line-height: 1.2 !important;
+    margin: 0 0 0.15cm 0 !important;
+    color: black !important;
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+
+  .timeline__card p {
+    font-family: "Fraunces", Georgia, serif !important;
+    font-size: 9.5pt !important;
+    line-height: 1.45 !important;
+    margin: 0 0 0.2cm 0 !important;
+    color: #222 !important;
+    orphans: 2;
+    widows: 2;
+  }
+
+  .timeline__card footer {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 0.3cm !important;
+    align-items: center !important;
+    margin-top: 0.2cm !important;
+    padding-top: 0.2cm !important;
+    border-top: 0.3pt dotted #aaa !important;
+  }
+
+  /* Badges de disciplina — manter cor mas a cinza-escuro para impressão limpa.
+     Quem quer cor pode imprimir com "Cores e gráficos" ativado.       */
+  .timeline__disciplina {
+    background: #eee !important;
+    color: black !important;
+    border: 0.3pt solid #999 !important;
+    padding: 1pt 5pt !important;
+    border-radius: 999px !important;
+    font-family: "Inter Tight", system-ui, sans-serif !important;
+    font-size: 7pt !important;
+    letter-spacing: 0.05em !important;
+    text-transform: uppercase !important;
+    font-weight: 500 !important;
+  }
+
+  .timeline__categoria {
+    font-family: "Inter Tight", system-ui, sans-serif !important;
+    font-size: 7pt !important;
+    letter-spacing: 0.1em !important;
+    text-transform: uppercase !important;
+    color: #555 !important;
+  }
+
+  /* ---------- Quebras manuais ---------- */
+  /* Forçar página antes de cada novo semestre seria opcional;
+     deixamos o flow natural por defeito.                         */
+}

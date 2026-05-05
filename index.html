@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfólio digital — quatro semestres de Educação Infantil." />
+  <title>Portfólio · Educação Infantil</title>
+
+  <!-- Tipografia: Fraunces (serifa display) + Inter Tight (sans corpo) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..900,0..100;1,9..144,300..900,0..100&family=Inter+Tight:wght@300..700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/print.css" media="print" />
+</head>
+
+<body data-vista="publica">
+
+  <!-- =====================================================================
+       VISTA PÚBLICA
+       ===================================================================== -->
+  <div class="vista-publica" data-area="publica">
+
+  <!-- =====================================================================
+       Botão de acesso — discreto, canto superior direito.
+       Em ui-privada será trocado por menu de utilizador autenticado.
+       ===================================================================== -->
+  <button
+    type="button"
+    class="acesso-aluno"
+    data-action="abrir-login"
+    aria-label="Acesso restrito do aluno"
+  >
+    <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true">
+      <path d="M12 11a3 3 0 100-6 3 3 0 000 6z M5 20c0-3.5 3-6 7-6s7 2.5 7 6"
+        fill="none" stroke="currentColor" stroke-width="1.5"
+        stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+    <span>Acesso aluno</span>
+  </button>
+
+  <!-- ============================================================
+       BLOCO 1 — Hero
+       ============================================================ -->
+  <section class="hero" data-bloco="hero" aria-labelledby="hero-frase">
+    <div class="hero__inner">
+      <p class="hero__kicker" data-anim="fade">Portfólio · Educação Infantil</p>
+
+      <h1 class="hero__frase" id="hero-frase" data-anim="palavras">
+        Ensinar é primeiro aprender a olhar.
+      </h1>
+
+      <p class="hero__assinatura" data-anim="fade">
+        <span class="hero__nome">Maria Silva</span>
+        <span class="hero__separador" aria-hidden="true">·</span>
+        <span class="hero__anos">2022 — 2026</span>
+      </p>
+    </div>
+
+    <div class="hero__scroll" aria-hidden="true">
+      <span>Começar</span>
+      <svg viewBox="0 0 24 24" width="14" height="20">
+        <path d="M12 4v14m0 0l-5-5m5 5l5-5"
+          fill="none" stroke="currentColor" stroke-width="1.5"
+          stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       BLOCO 2 — No início
+       ============================================================ -->
+  <section class="inicio" data-bloco="inicio" aria-labelledby="inicio-titulo">
+    <div class="inicio__inner">
+
+      <header class="capitulo-cabecalho">
+        <span class="capitulo-cabecalho__etiqueta" data-anim="fade">Capítulo I</span>
+        <h2 class="capitulo-cabecalho__titulo" id="inicio-titulo" data-anim="fade">
+          No início,<br /><em>todas as perguntas</em>.
+        </h2>
+      </header>
+
+      <article class="reflexao-destaque" data-anim="fade">
+        <p class="reflexao-destaque__corpo">
+          <span class="reflexao-destaque__capitular">C</span>heguei
+          a este curso a tentar perceber se servia para isto. Os primeiros meses
+          foram feitos de dúvidas pequenas e de uma dúvida grande: <em>e se eu não
+          conseguir ver o que cada criança precisa?</em> Aprendi depressa que a
+          resposta não está num manual — está na atenção que se treina, dia a dia,
+          olhando para uma sala que nunca é a mesma duas vezes.
+        </p>
+        <p class="reflexao-destaque__corpo">
+          A teoria que pensava abstrata começou a ganhar nomes próprios — o João,
+          que não falava ao chegar à creche, e que ao fim de duas semanas já
+          guardava a sua mochila no cacifo certo. Foi aí que entendi: este curso
+          não é sobre crianças em geral. É sobre uma criança de cada vez.
+        </p>
+        <footer class="reflexao-destaque__rodape">
+          <span>Reflexão final · 1.º Semestre</span>
+        </footer>
+      </article>
+
+      <div class="inicio__galeria" aria-label="Imagens do primeiro semestre">
+        <figure class="inicio__figura inicio__figura--alta" data-anim="fade-up">
+          <div class="placeholder-imagem placeholder-imagem--ocre" aria-hidden="true"></div>
+          <figcaption>Primeiro estágio · sala dos 2 anos</figcaption>
+        </figure>
+        <figure class="inicio__figura inicio__figura--baixa" data-anim="fade-up">
+          <div class="placeholder-imagem placeholder-imagem--terracota" aria-hidden="true"></div>
+          <figcaption>Materiais Montessori · oficina prática</figcaption>
+        </figure>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       BLOCO 3 — Evolução: 4 capítulos (um por semestre)
+       Mock data inline para que o HTML estático seja apresentável.
+       Os dados reais virão de Firestore via ui-publica.js.
+       ============================================================ -->
+  <section class="evolucao" data-bloco="evolucao" aria-label="Evolução ao longo dos quatro semestres">
+
+    <!-- ----- Semestre 1 ----- -->
+    <article class="semestre semestre--1" data-semestre="1">
+      <div class="semestre__abertura">
+        <span class="semestre__numeral" aria-hidden="true">01</span>
+        <div class="semestre__cabecalho">
+          <span class="semestre__etiqueta" data-anim="fade">1.º Semestre</span>
+          <h2 class="semestre__titulo" data-anim="fade">Os primeiros passos</h2>
+          <p class="semestre__reflexao" data-anim="fade">
+            O semestre em que percebi que <em>observar é o primeiro verbo</em>.
+            Antes de planear, antes de intervir, primeiro olhar — sem pressa,
+            sem julgamento, sem agenda própria. Foi nas observações que comecei
+            a desfazer ideias feitas que tinha sobre o que é cuidar.
+          </p>
+        </div>
+      </div>
+
+      <div class="semestre__registos">
+        <a class="card" href="?registo=mock-1-a" data-card-registo data-anim="fade-up">
+          <div class="card__imagem">
+            <div class="placeholder-imagem placeholder-imagem--musgo" aria-hidden="true"></div>
+            <span class="card__categoria card__categoria--teoria">Teoria</span>
+          </div>
+          <div class="card__corpo">
+            <span class="card__disciplina" style="--badge: #7a8b5c">Psicologia do Desenvolvimento</span>
+            <h3 class="card__titulo">Diário de observações: as primeiras três semanas</h3>
+            <p class="card__excerto">Registo etnográfico de uma sala dos 2 anos, com foco nas rotinas de transição e nos sinais de adaptação.</p>
+          </div>
+        </a>
+
+        <a class="card" href="?registo=mock-1-b" data-card-registo data-anim="fade-up">
+          <div class="card__imagem">
+            <div class="placeholder-imagem placeholder-imagem--ocre" aria-hidden="true"></div>
+            <span class="card__categoria card__categoria--pratica">Prática</span>
+          </div>
+          <div class="card__corpo">
+            <span class="card__disciplina" style="--badge: #c97b5a">Atelier de Expressão Plástica</span>
+            <h3 class="card__titulo">Pintar com pés descalços</h3>
+            <p class="card__excerto">Sessão sensorial planeada para um grupo dos 3 anos. Documentação foto a foto, com análise das escolhas das crianças.</p>
+          </div>
+        </a>
+      </div>
+    </article>
+
+    <!-- separador -->
+    <div class="separador-semestres" aria-hidden="true">
+      <span class="separador-semestres__linha"></span>
+    </div>
+
+    <!-- ----- Semestre 2 ----- -->
+    <article class="semestre semestre--2" data-semestre="2">
+      <div class="semestre__abertura">
+        <span class="semestre__numeral" aria-hidden="true">02</span>
+        <div class="semestre__cabecalho">
+          <span class="semestre__etiqueta" data-anim="fade">2.º Semestre</span>
+          <h2 class="semestre__titulo" data-anim="fade">Aprender a olhar</h2>
+          <p class="semestre__reflexao" data-anim="fade">
+            Comecei a perceber que cada gesto de uma criança tem história — a forma
+            como pega num lápis, a hesitação antes de entrar numa atividade nova.
+            Este semestre foi feito de <em>silêncios produtivos</em>: a calar a vontade
+            de intervir cedo demais.
+          </p>
+        </div>
+      </div>
+
+      <div class="semestre__registos">
+        <a class="card" href="?registo=mock-2-a" data-card-registo data-anim="fade-up">
+          <div class="card__imagem">
+            <div class="placeholder-imagem placeholder-imagem--terracota" aria-hidden="true"></div>
+            <span class="card__categoria card__categoria--pratica">Prática</span>
+          </div>
+          <div class="card__corpo">
+            <span class="card__disciplina" style="--badge: #d49a4a">Didática da Matemática</span>
+            <h3 class="card__titulo">Quantos cabem na caixa?</h3>
+            <p class="card__excerto">Sequência didática sobre noção de conservação, com materiais reciclados. Três sessões com o mesmo grupo.</p>
+          </div>
+        </a>
+
+        <a class="card" href="?registo=mock-2-b" data-card-registo data-anim="fade-up">
+          <div class="card__imagem">
+            <div class="placeholder-imagem placeholder-imagem--musgo" aria-hidden="true"></div>
+            <span class="card__categoria card__categoria--teoria">Teoria</span>
+          </div>
+          <div class="card__corpo">
+            <span class="card__disciplina" style="--badge: #7a8b5c">Sociologia da Infância</span>
+            <h3 class="card__titulo">Trabalho final: a infância como categoria social</h3>
+            <p class="card__excerto">Ensaio sobre as conceções modernas de infância, com leitura crítica de Sarmento e Pinto.</p>
+          </div>
+        </a>
+      </div>
+    </article>
+
+    <div class="separador-semestres" aria-hidden="true">
+      <span class="separador-semestres__linha"></span>
+    </div>
+
+    <!-- ----- Semestre 3 ----- -->
+    <article class="semestre semestre--3" data-semestre="3">
+      <div class="semestre__abertura">
+        <span class="semestre__numeral" aria-hidden="true">03</span>
+        <div class="semestre__cabecalho">
+          <span class="semestre__etiqueta" data-anim="fade">3.º Semestre</span>
+          <h2 class="semestre__titulo" data-anim="fade">Encontrar a minha voz</h2>
+          <p class="semestre__reflexao" data-anim="fade">
+            O semestre em que parei de imitar e comecei a propor. As planificações
+            deixaram de ser exercícios para entregar e passaram a ser <em>convites
+            que eu queria ver acontecer</em>. Errei mais — e aprendi mais com cada erro
+            do que em qualquer manual.
+          </p>
+        </div>
+      </div>
+
+      <div class="semestre__registos">
+        <a class="card" href="?registo=mock-3-a" data-card-registo data-anim="fade-up">
+          <div class="card__imagem">
+            <div class="placeholder-imagem placeholder-imagem--ocre" aria-hidden="true"></div>
+            <span class="card__categoria card__categoria--pratica">Prática</span>
+          </div>
+          <div class="card__corpo">
+            <span class="card__disciplina" style="--badge: #c97b5a">Estágio II</span>
+            <h3 class="card__titulo">Projeto "Os bichos do quintal"</h3>
+            <p class="card__excerto">Projeto investigativo de seis semanas com um grupo dos 4 anos. Da observação à publicação de um pequeno livro.</p>
+          </div>
+        </a>
+
+        <a class="card" href="?registo=mock-3-b" data-card-registo data-anim="fade-up">
+          <div class="card__imagem">
+            <div class="placeholder-imagem placeholder-imagem--musgo" aria-hidden="true"></div>
+            <span class="card__categoria card__categoria--teoria">Teoria</span>
+          </div>
+          <div class="card__corpo">
+            <span class="card__disciplina" style="--badge: #7a8b5c">Pedagogia da Infância</span>
+            <h3 class="card__titulo">Reggio Emilia: o que aprendi a desejar</h3>
+            <p class="card__excerto">Análise crítica da abordagem reggiana, com cruzamento entre leituras e o que observei em estágio.</p>
+          </div>
+        </a>
+      </div>
+    </article>
+
+    <div class="separador-semestres" aria-hidden="true">
+      <span class="separador-semestres__linha"></span>
+    </div>
+
+    <!-- ----- Semestre 4 ----- -->
+    <article class="semestre semestre--4" data-semestre="4">
+      <div class="semestre__abertura">
+        <span class="semestre__numeral" aria-hidden="true">04</span>
+        <div class="semestre__cabecalho">
+          <span class="semestre__etiqueta" data-anim="fade">4.º Semestre</span>
+          <h2 class="semestre__titulo" data-anim="fade">Pronta para o mundo</h2>
+          <p class="semestre__reflexao" data-anim="fade">
+            Saio daqui sem certezas — e essa é talvez a aprendizagem maior. <em>Sair
+            sem certezas é estar disponível para cada criança que ainda não conheci.</em>
+            Levo um caderno cheio, mãos cheias de gestos, e a noção clara de que o
+            curso acaba mas a formação não.
+          </p>
+        </div>
+      </div>
+
+      <div class="semestre__registos">
+        <a class="card" href="?registo=mock-4-a" data-card-registo data-anim="fade-up">
+          <div class="card__imagem">
+            <div class="placeholder-imagem placeholder-imagem--terracota" aria-hidden="true"></div>
+            <span class="card__categoria card__categoria--pratica">Prática</span>
+          </div>
+          <div class="card__corpo">
+            <span class="card__disciplina" style="--badge: #d49a4a">Estágio Final</span>
+            <h3 class="card__titulo">Documentação pedagógica de um trimestre</h3>
+            <p class="card__excerto">Ciclo completo de documentação pedagógica num jardim de infância, com restituição às famílias.</p>
+          </div>
+        </a>
+
+        <a class="card" href="?registo=mock-4-b" data-card-registo data-anim="fade-up">
+          <div class="card__imagem">
+            <div class="placeholder-imagem placeholder-imagem--ocre" aria-hidden="true"></div>
+            <span class="card__categoria card__categoria--teoria">Teoria</span>
+          </div>
+          <div class="card__corpo">
+            <span class="card__disciplina" style="--badge: #c97b5a">Investigação Educativa</span>
+            <h3 class="card__titulo">Relatório final de investigação</h3>
+            <p class="card__excerto">Estudo de caso sobre transições casa–creche, com base em observação participante e entrevistas a famílias.</p>
+          </div>
+        </a>
+      </div>
+    </article>
+
+  </section>
+
+  <!-- ============================================================
+       BLOCO 4 — Quem sou hoje
+       ============================================================ -->
+  <section class="quem-sou" data-bloco="quem-sou" aria-labelledby="quem-sou-titulo">
+    <div class="quem-sou__inner">
+
+      <div class="quem-sou__retrato" data-anim="fade">
+        <div class="placeholder-retrato" aria-hidden="true">
+          <span>retrato</span>
+        </div>
+      </div>
+
+      <div class="quem-sou__texto">
+        <h2 class="quem-sou__titulo" id="quem-sou-titulo" data-anim="fade">Quem sou hoje</h2>
+
+        <p class="quem-sou__bio" data-anim="fade">
+          Sou Maria Silva, futura educadora de infância. Estes quatro anos
+          ensinaram-me que a profissão começa muito antes de pisar uma sala — começa
+          na maneira como decido, todos os dias, prestar atenção. Acredito numa
+          pedagogia que dá tempo, que escuta antes de propor, e que confia na criança
+          como construtora do seu próprio mundo.
+        </p>
+
+        <dl class="quem-sou__meta" data-anim="fade">
+          <div>
+            <dt>Instituição</dt>
+            <dd>Escola Superior de Educação</dd>
+          </div>
+          <div>
+            <dt>Curso</dt>
+            <dd>Educação Infantil</dd>
+          </div>
+          <div>
+            <dt>Anos</dt>
+            <dd>2022 — 2026</dd>
+          </div>
+        </dl>
+
+        <a class="botao-portfolio" href="#portfolio-completo" data-anim="fade">
+          <span>Ver portfólio completo</span>
+          <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+            <path d="M5 12h14m0 0l-5-5m5 5l-5 5" fill="none"
+              stroke="currentColor" stroke-width="1.5"
+              stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       BLOCO 5 — Portfólio completo (timeline + filtros)
+       ============================================================ -->
+  <section class="portfolio-completo" id="portfolio-completo" data-bloco="completo"
+    aria-labelledby="completo-titulo">
+
+    <header class="portfolio-completo__cabecalho">
+      <span class="portfolio-completo__etiqueta">Apêndice</span>
+      <h2 class="portfolio-completo__titulo" id="completo-titulo">Portfólio completo</h2>
+      <p class="portfolio-completo__subtitulo">
+        Todos os trabalhos publicados, em ordem cronológica inversa.
+      </p>
+    </header>
+
+    <div class="filtros" role="region" aria-label="Filtros do portfólio">
+      <div class="filtros__grupo">
+        <label class="filtros__rotulo" for="filtro-pesquisa">Pesquisa</label>
+        <input
+          type="search"
+          id="filtro-pesquisa"
+          class="filtros__campo"
+          placeholder="Procurar por título ou descrição…"
+          data-filtro="pesquisa"
+        />
+      </div>
+
+      <div class="filtros__grupo">
+        <span class="filtros__rotulo">Semestre</span>
+        <div class="filtros__opcoes" role="group" aria-label="Filtrar por semestre">
+          <button type="button" class="filtros__chip filtros__chip--ativo" data-filtro-semestre="todos">Todos</button>
+          <button type="button" class="filtros__chip" data-filtro-semestre="1">1.º</button>
+          <button type="button" class="filtros__chip" data-filtro-semestre="2">2.º</button>
+          <button type="button" class="filtros__chip" data-filtro-semestre="3">3.º</button>
+          <button type="button" class="filtros__chip" data-filtro-semestre="4">4.º</button>
+        </div>
+      </div>
+
+      <div class="filtros__grupo">
+        <span class="filtros__rotulo">Categoria</span>
+        <div class="filtros__opcoes" role="group" aria-label="Filtrar por categoria">
+          <button type="button" class="filtros__chip filtros__chip--ativo" data-filtro-categoria="todas">Todas</button>
+          <button type="button" class="filtros__chip" data-filtro-categoria="teoria">Teoria</button>
+          <button type="button" class="filtros__chip" data-filtro-categoria="pratica">Prática</button>
+        </div>
+      </div>
+
+      <div class="filtros__grupo filtros__grupo--toggles">
+        <label class="filtros__toggle">
+          <input type="checkbox" data-filtro="destaques-only" />
+          <span>Só destaques</span>
+        </label>
+        <button type="button" class="filtros__exportar" data-action="exportar-pdf">
+          <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true">
+            <path d="M12 4v12m0 0l-4-4m4 4l4-4M5 20h14"
+              fill="none" stroke="currentColor" stroke-width="1.5"
+              stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Exportar PDF</span>
+        </button>
+      </div>
+    </div>
+
+    <ol class="timeline" data-timeline>
+
+      <li class="timeline__item" data-timeline-item data-semestre="4" data-categoria="pratica">
+        <div class="timeline__marca" aria-hidden="true"><span></span></div>
+        <article class="timeline__card">
+          <header class="timeline__cabecalho">
+            <time datetime="2026-04-15">Abril 2026</time>
+            <span class="timeline__semestre">4.º Sem.</span>
+          </header>
+          <h3>Documentação pedagógica de um trimestre</h3>
+          <p>Ciclo completo de documentação pedagógica num jardim de infância, com restituição às famílias.</p>
+          <footer>
+            <span class="timeline__disciplina" style="--badge: #d49a4a">Estágio Final</span>
+            <span class="timeline__categoria">Prática</span>
+          </footer>
+        </article>
+      </li>
+
+      <li class="timeline__item" data-timeline-item data-semestre="4" data-categoria="teoria">
+        <div class="timeline__marca" aria-hidden="true"><span></span></div>
+        <article class="timeline__card">
+          <header class="timeline__cabecalho">
+            <time datetime="2026-03-02">Março 2026</time>
+            <span class="timeline__semestre">4.º Sem.</span>
+          </header>
+          <h3>Relatório final de investigação</h3>
+          <p>Estudo de caso sobre transições casa–creche, com base em observação participante e entrevistas a famílias.</p>
+          <footer>
+            <span class="timeline__disciplina" style="--badge: #c97b5a">Investigação Educativa</span>
+            <span class="timeline__categoria">Teoria</span>
+          </footer>
+        </article>
+      </li>
+
+      <li class="timeline__item" data-timeline-item data-semestre="3" data-categoria="pratica">
+        <div class="timeline__marca" aria-hidden="true"><span></span></div>
+        <article class="timeline__card">
+          <header class="timeline__cabecalho">
+            <time datetime="2025-11-20">Novembro 2025</time>
+            <span class="timeline__semestre">3.º Sem.</span>
+          </header>
+          <h3>Projeto "Os bichos do quintal"</h3>
+          <p>Projeto investigativo de seis semanas com um grupo dos 4 anos. Da observação à publicação de um pequeno livro.</p>
+          <footer>
+            <span class="timeline__disciplina" style="--badge: #c97b5a">Estágio II</span>
+            <span class="timeline__categoria">Prática</span>
+          </footer>
+        </article>
+      </li>
+
+      <li class="timeline__item" data-timeline-item data-semestre="3" data-categoria="teoria">
+        <div class="timeline__marca" aria-hidden="true"><span></span></div>
+        <article class="timeline__card">
+          <header class="timeline__cabecalho">
+            <time datetime="2025-10-08">Outubro 2025</time>
+            <span class="timeline__semestre">3.º Sem.</span>
+          </header>
+          <h3>Reggio Emilia: o que aprendi a desejar</h3>
+          <p>Análise crítica da abordagem reggiana, com cruzamento entre leituras e o que observei em estágio.</p>
+          <footer>
+            <span class="timeline__disciplina" style="--badge: #7a8b5c">Pedagogia da Infância</span>
+            <span class="timeline__categoria">Teoria</span>
+          </footer>
+        </article>
+      </li>
+
+      <li class="timeline__item" data-timeline-item data-semestre="2" data-categoria="pratica">
+        <div class="timeline__marca" aria-hidden="true"><span></span></div>
+        <article class="timeline__card">
+          <header class="timeline__cabecalho">
+            <time datetime="2025-04-10">Abril 2025</time>
+            <span class="timeline__semestre">2.º Sem.</span>
+          </header>
+          <h3>Quantos cabem na caixa?</h3>
+          <p>Sequência didática sobre noção de conservação, com materiais reciclados. Três sessões com o mesmo grupo.</p>
+          <footer>
+            <span class="timeline__disciplina" style="--badge: #d49a4a">Didática da Matemática</span>
+            <span class="timeline__categoria">Prática</span>
+          </footer>
+        </article>
+      </li>
+
+      <li class="timeline__item" data-timeline-item data-semestre="2" data-categoria="teoria">
+        <div class="timeline__marca" aria-hidden="true"><span></span></div>
+        <article class="timeline__card">
+          <header class="timeline__cabecalho">
+            <time datetime="2025-03-15">Março 2025</time>
+            <span class="timeline__semestre">2.º Sem.</span>
+          </header>
+          <h3>Trabalho final: a infância como categoria social</h3>
+          <p>Ensaio sobre as conceções modernas de infância, com leitura crítica de Sarmento e Pinto.</p>
+          <footer>
+            <span class="timeline__disciplina" style="--badge: #7a8b5c">Sociologia da Infância</span>
+            <span class="timeline__categoria">Teoria</span>
+          </footer>
+        </article>
+      </li>
+
+      <li class="timeline__item" data-timeline-item data-semestre="1" data-categoria="teoria">
+        <div class="timeline__marca" aria-hidden="true"><span></span></div>
+        <article class="timeline__card">
+          <header class="timeline__cabecalho">
+            <time datetime="2024-11-12">Novembro 2024</time>
+            <span class="timeline__semestre">1.º Sem.</span>
+          </header>
+          <h3>Diário de observações: as primeiras três semanas</h3>
+          <p>Registo etnográfico de uma sala dos 2 anos, com foco nas rotinas de transição e nos sinais de adaptação.</p>
+          <footer>
+            <span class="timeline__disciplina" style="--badge: #7a8b5c">Psicologia do Desenvolvimento</span>
+            <span class="timeline__categoria">Teoria</span>
+          </footer>
+        </article>
+      </li>
+
+      <li class="timeline__item" data-timeline-item data-semestre="1" data-categoria="pratica">
+        <div class="timeline__marca" aria-hidden="true"><span></span></div>
+        <article class="timeline__card">
+          <header class="timeline__cabecalho">
+            <time datetime="2024-10-22">Outubro 2024</time>
+            <span class="timeline__semestre">1.º Sem.</span>
+          </header>
+          <h3>Pintar com pés descalços</h3>
+          <p>Sessão sensorial planeada para um grupo dos 3 anos. Documentação foto a foto, com análise das escolhas das crianças.</p>
+          <footer>
+            <span class="timeline__disciplina" style="--badge: #c97b5a">Atelier de Expressão Plástica</span>
+            <span class="timeline__categoria">Prática</span>
+          </footer>
+        </article>
+      </li>
+
+    </ol>
+
+    <p class="estado-vazio" data-estado-vazio hidden>
+      Sem registos para os filtros escolhidos.
+    </p>
+
+  </section>
+
+  <!-- ============================================================
+       Rodapé minimal
+       ============================================================ -->
+  <footer class="rodape">
+    <p>Maria Silva · Portfólio · 2026</p>
+  </footer>
+
+  </div><!-- /vista-publica -->
+
+  <!-- =====================================================================
+       VISTA PRIVADA — Dashboard
+       Estrutura mínima; o conteúdo dinâmico é injetado por ui-privada.js.
+       ===================================================================== -->
+  <div class="vista-privada" data-area="privada" hidden>
+    <aside class="dashboard__lateral">
+      <header class="dashboard__cabecalho">
+        <span class="dashboard__etiqueta">Dashboard</span>
+        <p class="dashboard__autor" data-dashboard-autor>—</p>
+      </header>
+
+      <nav class="dashboard__nav" aria-label="Secções do dashboard">
+        <button type="button" class="dashboard__tab dashboard__tab--ativa"
+                data-tab="registos">
+          <span class="dashboard__tab-icone" aria-hidden="true">◉</span>
+          <span>Registos</span>
+        </button>
+        <button type="button" class="dashboard__tab" data-tab="reflexoes">
+          <span class="dashboard__tab-icone" aria-hidden="true">¶</span>
+          <span>Reflexões</span>
+        </button>
+        <button type="button" class="dashboard__tab" data-tab="objetivos">
+          <span class="dashboard__tab-icone" aria-hidden="true">◇</span>
+          <span>Objetivos</span>
+        </button>
+        <button type="button" class="dashboard__tab" data-tab="disciplinas">
+          <span class="dashboard__tab-icone" aria-hidden="true">▦</span>
+          <span>Disciplinas</span>
+        </button>
+        <button type="button" class="dashboard__tab" data-tab="perfil">
+          <span class="dashboard__tab-icone" aria-hidden="true">◐</span>
+          <span>Perfil</span>
+        </button>
+      </nav>
+
+      <footer class="dashboard__rodape">
+        <a href="?" class="dashboard__link">↗ Ver portfólio público</a>
+        <button type="button" class="dashboard__sair" data-action="sair">Sair</button>
+      </footer>
+    </aside>
+
+    <main class="dashboard__conteudo" data-dashboard-conteudo>
+      <div class="dashboard__a-carregar">A carregar…</div>
+    </main>
+  </div>
+
+  <!-- ============================================================
+       Modal de detalhe de registo (gerido por JS — escondido por defeito)
+       Estrutura criada estaticamente para que o CSS e a acessibilidade
+       sejam claros desde já.
+       ============================================================ -->
+  <div class="modal-registo" data-modal-registo hidden role="dialog" aria-modal="true" aria-labelledby="modal-registo-titulo">
+    <div class="modal-registo__fundo" data-modal-fechar aria-hidden="true"></div>
+    <div class="modal-registo__caixa" role="document">
+      <button type="button" class="modal-registo__fechar" data-modal-fechar aria-label="Fechar">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+          <path d="M6 6l12 12M6 18L18 6" fill="none" stroke="currentColor"
+            stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <div class="modal-registo__conteudo">
+        <h2 id="modal-registo-titulo">Título do registo</h2>
+        <p>Conteúdo carregado dinamicamente.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       Modal de login (gerido por auth.js — escondido por defeito)
+       ============================================================ -->
+  <div class="modal-login" data-modal-login hidden role="dialog" aria-modal="true" aria-labelledby="modal-login-titulo">
+    <div class="modal-login__fundo" data-modal-fechar aria-hidden="true"></div>
+    <div class="modal-login__caixa" role="document">
+      <button type="button" class="modal-login__fechar" data-modal-fechar aria-label="Fechar">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+          <path d="M6 6l12 12M6 18L18 6" fill="none" stroke="currentColor"
+            stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <h2 id="modal-login-titulo">Acesso restrito</h2>
+      <p class="modal-login__intro">Esta área é apenas para o aluno autor do portfólio.</p>
+      <form class="modal-login__form" data-form-login novalidate>
+        <label>
+          <span>Email</span>
+          <input type="email" name="email" autocomplete="email" required />
+        </label>
+        <label>
+          <span>Palavra-passe</span>
+          <input type="password" name="password" autocomplete="current-password" required />
+        </label>
+        <p class="modal-login__erro" data-login-erro hidden role="alert"></p>
+        <button type="submit">Entrar</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       Modal genérico de formulário (vista privada — criar/editar registos,
+       reflexões, disciplinas). Conteúdo injetado por ui-privada.js.
+       ============================================================ -->
+  <div class="modal-form" data-modal-form hidden role="dialog" aria-modal="true" aria-labelledby="modal-form-titulo">
+    <div class="modal-form__fundo" data-modal-fechar aria-hidden="true"></div>
+    <div class="modal-form__caixa" role="document">
+      <button type="button" class="modal-form__fechar" data-modal-fechar aria-label="Fechar">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+          <path d="M6 6l12 12M6 18L18 6" fill="none" stroke="currentColor"
+            stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <h2 id="modal-form-titulo" class="modal-form__titulo">—</h2>
+      <div class="modal-form__corpo" data-modal-form-corpo></div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       Diálogo de confirmação (apagar, etc.)
+       ============================================================ -->
+  <div class="modal-confirma" data-modal-confirma hidden role="alertdialog" aria-modal="true" aria-labelledby="modal-confirma-titulo">
+    <div class="modal-confirma__fundo" data-modal-fechar aria-hidden="true"></div>
+    <div class="modal-confirma__caixa" role="document">
+      <h2 id="modal-confirma-titulo" data-confirma-titulo>Confirmar?</h2>
+      <p data-confirma-mensagem>—</p>
+      <div class="modal-confirma__acoes">
+        <button type="button" class="botao-secundario" data-confirma-cancelar>Cancelar</button>
+        <button type="button" class="botao-destrutivo" data-confirma-ok>Confirmar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       Toast (notificações leves: guardado, erro, etc.)
+       ============================================================ -->
+  <div class="toast" data-toast hidden role="status" aria-live="polite"></div>
+
+  <!-- ============================================================
+       Módulos da app — entry point
+       ============================================================ -->
+  <script type="module" src="js/app.js"></script>
+
+</body>
+</html>

@@ -31,7 +31,7 @@ import { getStorage } from
 // ----------------------------------------------------------------------------
 export const firebaseConfig = {
   apiKey:            "REPLACE_API_KEY",
-  authDomain:        "REPLACE_PROJECT.firebaseapp.com",
+  authDomain:        "https://portfolio-b9038-default-rtdb.europe-west1.firebasedatabase.app/",
   projectId:         "REPLACE_PROJECT_ID",
   storageBucket:     "REPLACE_PROJECT.appspot.com",
   messagingSenderId: "REPLACE_SENDER_ID",
